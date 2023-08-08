@@ -24,4 +24,4 @@ class SBPage(BasePage):
         assert login == passw == '', "Assertion error, fields is not empty"
 
     def print_feedback_message(self):
-        print(self.find_element(SBLocators.FEEDBACK_MESSAGE))
+        print(self.find_element(SBLocators.FEEDBACK_MESSAGE).text)

@@ -6,9 +6,9 @@ from pages.portal_login_page import SBPage, SBLocators
 
 
 @pytest.fixture(scope="class")
-def portal_open(browser, data_file):
+def portal_open(browser, data_json):
     search_page = SearchPage(browser)
-    search_page.go_to_site(data_file[1])
+    search_page.go_to_site(data_json[1])
     search_page.enter_word("портал совкомбанк")
     search_page.press_enter()
     results = Results(browser)

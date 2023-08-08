@@ -15,8 +15,7 @@ class Results(BasePage):
 
     def go_to_first_element(self):
         element = self.find_element(SearchResultLocators.FIRST_ITEM, time=2)
-        action_chains = ActionChains(self.driver)
-        action_chains.key_down(Keys.CONTROL).click(element).key_up(Keys.CONTROL).perform()
+        return self.open_link_in_new_tab(element)
 
     def print_result_count(self):
         print(self.find_element(SearchResultLocators.RESULTS_COUNT).text)
